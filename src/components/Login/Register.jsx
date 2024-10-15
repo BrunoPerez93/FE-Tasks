@@ -10,6 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
+import FormField from "./FormField";
 
 const Register = () => {
   const [username, setUsername] = React.useState("");
@@ -57,32 +58,33 @@ const Register = () => {
         <form onSubmit={handleRegister}>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="username">Username</Label>
-              <Input
-                id="username"
+              <FormField
+                htmlFor="username"
+                label="Username"
                 placeholder="Username"
+                type="text"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                setValue={setUsername}
               />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
+              <FormField
+                htmlFor="password"
+                label="Password"
                 placeholder="Password"
+                type="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                setValue={setPassword}
               />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
-              <Input
-                id="confirmPassword"
-                type="password"
+              <FormField
+                htmlFor="confirmPassword"
+                label="Confirm Password"
                 placeholder="Confirm Password"
+                type="password"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                setValue={setConfirmPassword}
               />
             </div>
             {error && <p className="text-red-500">{error}</p>}

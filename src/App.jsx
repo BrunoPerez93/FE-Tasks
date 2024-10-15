@@ -12,6 +12,7 @@ import Dashboard from "./components/Dashboard/TasksList";
 import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
 import TasksList from "./components/Dashboard/TasksList";
+import AddTask from "./components/Dashboard/AddTask";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/tasksList" element={<TasksList />} />
+        <Route path="/addTask" element={<AddTask />} />
       </Routes>
     </main>
   );
