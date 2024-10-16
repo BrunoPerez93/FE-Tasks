@@ -11,7 +11,7 @@ const Navbar = ({ onLogout }) => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 w-full">
+    <nav className="bg-blue-950 border-gray-200 dark:bg-gray-900 w-full p-3">
       <div className="flex justify-end  md:order-2">
         <button
           type="button"
@@ -47,7 +47,9 @@ const Navbar = ({ onLogout }) => {
         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <LinkNavbar to="/tasksList" text="Tasks" />
           <LinkNavbar to="/addTask" text="New Task" />
-          <LinkNavbar to="/" text="Logout" />
+          <Button onClick={onLogout} className="text-white">
+            Logout
+          </Button>
         </ul>
       </div>
     </nav>
